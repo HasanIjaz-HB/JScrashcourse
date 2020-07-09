@@ -1,1 +1,1 @@
-{"name":"Haris","age":35,"email":"haris@xyz.com","userbookings":["Tyler"],"complaints":[{"name":"Tyler","category":"Plumbing","email":5,"workerbookedby":["Sam","Haris"],"complaintlist":["Sam","Haris"]}]}
+{"name":"Haris","age":35,"email":"haris@xyz.com","userbookings":["Tyler"],"complaints":["Tyler"]}

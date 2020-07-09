@@ -1,3 +1,4 @@
+const chalk = require("chalk");
 module.exports = class User {
   constructor(name, age, email) {
     this.name = name;
@@ -10,7 +11,7 @@ module.exports = class User {
     workforce.users.push(this);
   }
   bookworker(Worker) {
-    workforce.bookings.push(Worker);
+    workforce.bookings.push(Worker.name);
     this.userbookings.push(Worker.name);
     Worker.workerbookedby.push(this.name);
   }
@@ -19,7 +20,7 @@ module.exports = class User {
     this.userbookings.forEach(printName2);
   }
   usercomplain(Worker) {
-    this.complaints.push(Worker);
+    this.complaints.push(Worker.name);
     Worker.complaintlist.push(this.name);
   }
   printcomplaints() {

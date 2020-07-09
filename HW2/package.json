@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/HasanIjaz-HB/JScrashcourse/issues"
   },
-  "homepage": "https://github.com/HasanIjaz-HB/JScrashcourse#readme"
+  "homepage": "https://github.com/HasanIjaz-HB/JScrashcourse#readme",
+  "dependencies": {
+    "chalk": "^4.1.0"
+  }
 }
