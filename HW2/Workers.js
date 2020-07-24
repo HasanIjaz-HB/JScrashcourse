@@ -1,20 +1,23 @@
 module.exports = class Worker {
-  constructor(name, category, experience) {
+  constructor(name, field, experience) {
     this.name = name;
-    this.category = category;
-    this.email = experience;
-    this.workerbookedby = [];
+    this.field = field;
+    this.experience = experience;
+    this.bookings = [];
     this.complaintlist = [];
   }
-  registerworker() {
-    workforce.workers.push(this);
+  clientComplain(complaint) {
+    this.complaintlist.push(complaint);
+    complaint.client.complaints.push(complaint);
   }
-  printworkersbookings() {
-    console.log(this.name + " was booked the following users:");
-    this.workerbookedby.forEach(printName);
+  printBookings() {
+    console.log(this.name + " was booked the following clients:");
+    this.bookings.forEach(printClientName);
   }
-  printcomplaintsagainst() {
-    console.log(this.name + " has complaints filed by the following users:");
-    this.complaintlist.forEach(printName);
+  printComplaints() {
+    console.log(
+      this.name + " has complaints filed by the following clients:"
+    );
+    this.complaintlist.forEach(printClientName);
   }
-};
+}

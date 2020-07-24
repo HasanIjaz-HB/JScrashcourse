@@ -1,15 +1,1 @@
-[
-  ["1"],
-  {
-    "name": "2",
-    "age": 35,
-    "email": "3",
-    "userbookings": "4",
-    "complaints": "5",
-    "id": 2
-  },
-  "Haris",
-  "haris@xyz.com",
-  [],
-  []
-]
+[["1"],{"name":"2","age":35,"email":"3","userbookings":"4","complaints":"5","id":2},"Haris","haris@xyz.com",[],[]]

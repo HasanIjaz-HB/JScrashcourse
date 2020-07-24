@@ -4,29 +4,21 @@ module.exports = class User {
     this.name = name;
     this.age = age;
     this.email = email;
-    this.userbookings = [];
+    this.reservations = [];
     this.complaints = [];
   }
-  registeruser() {
-    workforce.users.push(this);
+  reserve(Booking) {
+    this.reservations.push(Booking);
+    Booking.worker.bookings.push(Booking);
   }
-  bookworker(Worker) {
-    workforce.bookings.push(Worker.name);
-    this.userbookings.push(Worker.name);
-    Worker.workerbookedby.push(this.name);
-  }
-  printuserbooking() {
+  printReservations() {
     console.log(this.name + " has booked the following workers:");
-    this.userbookings.forEach(printName2);
+    this.reservations.forEach(printWorkerName);
   }
-  usercomplain(Worker) {
-    this.complaints.push(Worker.name);
-    Worker.complaintlist.push(this.name);
-  }
-  printcomplaints() {
+  printComplaintByClient() {
     console.log(
       this.name + " has filed complaints against the following workers:"
     );
-    this.complaints.forEach(printName2);
+    this.complaints.forEach(printWorkerName);
   }
-};
+}
