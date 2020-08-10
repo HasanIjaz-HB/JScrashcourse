@@ -12,10 +12,12 @@ module.exports = class Platform {
   }
   printUserNames() {
     console.log("The registered users on the platform are:");
+    // printName has to be imported to that file in order to work. We can keep this kind of functions in a file called 'lib' and import them from there
     this.users.forEach(printName);
   }
   printWorkerNames() {
     console.log("The registered workers on the platform are:");
+    // printName has to be imported to that file in order to work. We can keep this kind of functions in a file called 'lib' and import them from there
     this.workers.forEach(printName);
   }
 }

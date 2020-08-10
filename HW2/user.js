@@ -1,4 +1,4 @@
-const chalk = require("chalk");
+const Lib = require("./lib")
 module.exports = class User {
   constructor(name, age, email) {
     this.name = name;
@@ -7,18 +7,19 @@ module.exports = class User {
     this.reservations = [];
     this.complaints = [];
   }
-  reserve(Booking) {
-    this.reservations.push(Booking);
-    Booking.worker.bookings.push(Booking);
+  reserve(booking) {
+    this.reservations.push(booking);
+    booking.worker.bookings.push(booking);
   }
   printReservations() {
     console.log(this.name + " has booked the following workers:");
-    this.reservations.forEach(printWorkerName);
+    this.reservations.forEach(Lib.printWorkerName);
   }
+  // this method should be renamed as "printComplaints"
   printComplaintByClient() {
     console.log(
       this.name + " has filed complaints against the following workers:"
     );
-    this.complaints.forEach(printWorkerName);
+    this.complaints.forEach(Lib.printWorkerName);
   }
 }
